@@ -27,4 +27,16 @@ class User
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function login($phone, $password) {
+        $user = $this->getUserByPhone($phone);
+
+        if ($user && password_verify($password, $user['password'])) {
+            if (password_verify($password, $user['password'])) {
+                return $user;
+            } else {
+                return false;
+            }
+        }
+    }
 }

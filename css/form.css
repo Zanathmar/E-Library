@@ -1,0 +1,39 @@
+/* Reset and base styles */
+.form-floating {
+    background: transparent;
+}
+
+/* Input field styling */
+.form-floating > .form-control {
+    background-color:rgb(255, 255, 255) !important;  /* Light grayish background */
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    height: 60px !important;
+}
+
+/* Label styling */
+.form-floating > label {
+    background: transparent !important;
+    height: 60px !important;
+    display: flex;
+    align-items: center;
+}
+
+/* Focus states */
+.form-floating > .form-control:focus {
+    background-color:rgb(249, 249, 249) !important;
+    border-color: #09C6F9 !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Ensure label stays properly positioned when input is focused/filled */
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    background: transparent !important;
+    opacity: 0.65;
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+/* Icon styling */
+.form-floating .position-absolute svg {
+    opacity: 0.4;
+}

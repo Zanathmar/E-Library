@@ -11,9 +11,9 @@ class Database
     public static function connect()
     {
 
-        if (self::$conn = null) {
+        if (self::$conn === null) {
             try {
-                self::$conn = new PDO("mysql:host=localhost;dbname=e_library", "root", "");
+                self::$conn = new PDO("mysql:host=localhost;dbname=e_library", "root", "root");
                 self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 //  echo "connection established";
             } catch (PDOException $e) {
